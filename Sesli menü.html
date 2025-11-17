@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<button id="readMenu" style="
+    font-size: 24px;
+    padding: 20px 40px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+">
+  Menüyü Sesli Oku
+</button>
+
+<script>
+document.getElementById('readMenu').addEventListener('click', function() {
+    if ('speechSynthesis' in window) {
+        let text = document.body.innerText;
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'tr-TR';
+        speechSynthesis.speak(utterance);
+    }
+});
+</script>
+
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Göksu Menü</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #fff;
+      color: #000;
+    }
+    h1, h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    .category {
+      margin-top: 20px;
+    }
+    .item {
+      margin-left: 10px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Göksu Menü</h1>
+
+  <div class="category">
+    <h2>YİYECEKLER</h2>
+    <p class="item">Hamburger - 180 TL</p>
+    <p class="item">Çiizburger - 200 TL</p>
+    <p class="item">Kaşarlı Tost - 75 TL</p>
+    <p class="item">Karışık Tost - 110 TL</p>
+    <p class="item">Patates Kızartması - 75 TL</p>
+  </div>
+    <h2>İÇECEKLER</h2>
+    <p class:"item">Çay - 15 TL</p>
+    <p class:"item">Türk Kahvesi - 45 TL</p>
+    <p class:"item">Nescafe - 50 TL</p>
+    <p class:"item">Su - 15 TL</p>
+    <p class:"item">Kutu içecekler - 65 TL</p>
+    <p class:"item">Aysti - 65 TL</p>
+    <p class:"item">Meyve suyu - 65 TL</p>
+    <p class:"item">Sade soda - 35 TL</p>
+    <p class:"item">Meyveli Soda - 45 TL</p>
+    <p class:"item">Ayran - 30 TL</p>
+  <script>
+    // Sayfa açıldığında metni sesli oku (opsiyonel)
+    window.onload = function() {
+      if ('speechSynthesis' in window) {
+        let text = document.body.innerText;
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'tr-TR';
+        speechSynthesis.speak(utterance);
+<script>
+document.getElementById('readMenu').addEventListener('click', function() {
+    if ('speechSynthesis' in window) {
+        // Metni oku
+        let text = document.querySelector('body').innerText;
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'tr-TR';
+        speechSynthesis.cancel(); // Önce varsa devam eden sesi durdur
+        speechSynthesis.speak(utterance);
+    } else {
+        alert("Tarayıcınız sesli okuma desteklemiyor.");
+    }
+});
+</script>
+
+</body>
+</html>
